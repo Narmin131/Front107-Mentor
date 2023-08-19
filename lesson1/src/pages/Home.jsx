@@ -12,7 +12,7 @@ const Home = () => {
         <div className="container">
           <div className="row">
             {
-              data.map((item, index)=>{
+              data.slice(0,4).map((item, index)=>{
                 return <SingleCard product={item} key={item.id}/>
               })
             }
