@@ -1,0 +1,18 @@
+.light {
+  --bgColor: red;
+  --textColor: black;
+  --wColor: green;
+}
+
+.dark {
+  --bgColor: blue;
+  --textColor: white;
+  --wColor: rgb(160, 186, 160);
+}
+
+.card-img-top {
+  transition: all 0.4s ease;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
