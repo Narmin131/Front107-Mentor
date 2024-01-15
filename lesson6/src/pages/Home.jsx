@@ -12,6 +12,8 @@ const Home = () => {
     Aos.init();
   });
 
+  const [a, setA] = useState(data);
+
   const [current, setCurrent] = useState(1);
   const [count, setCount] = useState(5);
   const [activePg, setActivePg] = useState(1);
@@ -33,6 +35,13 @@ const Home = () => {
   };
 
   // Change page
+  function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+  }
+
+  useEffect(() => {
+    shuffle(a);
+  });
 
   return (
     <>
@@ -40,6 +49,12 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <h1>Salam</h1>
+
+            {a.slice(0, 3).map((item, index) => {
+              return <SingleCard product={item} key={item.id} />;
+            })}
+            <hr />
+            <hr />
 
             <div className="d-flex">
               {buttonCount.map((btn) => (
